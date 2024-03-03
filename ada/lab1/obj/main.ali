@@ -22,7 +22,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
 RV MAX_TASKS=1+
 
-U main%b		main.adb		e87c0aa8 NE OO SU
+U main%b		main.adb		9c64f6a8 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -56,7 +56,7 @@ D interfac.ads		20210520051132 edec285f interfaces%s
 D i-c.ads		20210520051132 d9beded9 interfaces.c%s
 D i-cstrin.ads		20210520051132 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D main.adb		20240303214740 4688dfc5 main%b
+D main.adb		20240303220936 329023c5 main%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-atacco.ads		20210520051132 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
@@ -96,19 +96,22 @@ X 1 ada.ads
 16K9*Ada 20e8 18|1r6 1r23
 X 12 a-textio.ads
 58K13*Text_IO 725e16 18|1w10 1r27
-463U14*Put 18|32s4
-493V13*Get_Line{string} 18|33s36
-506U14*Put_Line 18|25s7
+463U14*Put 18|40s4
+493V13*Get_Line{string} 18|41s36
+506U14*Put_Line 18|30s7
 X 18 main.adb
-3U11*Main 3b11 35l5 35t9
-4i4 Step{long_long_integer} 21r23 33m4
-5b4 Can_Stop{boolean} 6r18 14m7 22r20
-8T14 Break_Thread 11b14 15l8 15t20 30r8
-9T14 Main_Thread 17b14 26l8 26t19 28r55
-18i7 Sum{long_long_integer} 21m10 21r17 25r16
-28A9 Threads_Array(9T14)<integer> 29r14
-29a4 Threads{28A9}
-30t4 B{8T14}
+3U11*Main 3b11 44l5 44t9
+5i4 Step{long_long_integer} 27r23 41m4
+7b4 Flag{boolean}
+8b4 Can_Stop{boolean} 10r18 20m7 28r20
+12T14 Break_Thread 17b14 21l8 21t20 35r15
+13T14 Main_Thread 15r55 23b14 31l8 31t19
+15A9 Threads_Array(13T14)<integer> 34r17
+24i7 Sum{long_long_integer} 27m10 27r17 30r16
+33U14 Lab 33b14 33>18 38l11 38t14 42s4
+33i18 N{positive} 34r36
+34a7 Threads{15A9}
+35t7 Break{12T14}
 X 34 s-stausa.ads
 208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
 273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22

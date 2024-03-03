@@ -2,8 +2,9 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Main is
 
-   N : Integer := 5;
-   Step : Long_Long_Integer := 1;
+   Step : Long_Long_Integer := 2;
+
+   Flag : Boolean := False;
    Can_Stop : Boolean := False;
 
    pragma Atomic(Can_Stop);
@@ -26,15 +27,18 @@ procedure Main is
          Sum := Sum + Step;
          exit when Can_Stop;
       end loop;
-
       Put_Line(Sum'Img);
    end Main_Thread;
 
-   Threads : Threads_Array(1 .. N);
-   B : Break_Thread;
-
+   procedure Lab1(N: Positive) is
+      Threads : Threads_Array(1 .. N);
+      Break : Break_Thread;
+   begin
+      null;
+      end Lab;
 begin
    Put("Enter the step: ");
    Step := Long_Long_Integer'Value(Get_Line);
+   Lab1(10);
    null;
 end Main;
