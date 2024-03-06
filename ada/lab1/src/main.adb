@@ -12,6 +12,7 @@ procedure Main is
    pragma Atomic(Can_Stop);
    pragma Atomic(Id_Of_Thread);
 
+
    task type Break_Thread;
    task type Main_Thread;
 
@@ -32,8 +33,10 @@ procedure Main is
          Sum := Sum + Step;
          exit when Can_Stop;
       end loop;
+      delay 1.0;
       Id_Of_Thread := Id_Of_Thread + 1;
       Put_Line("ID: " & Id_Of_Thread'Img & " Sum: " & Sum'Img & " Steps: " & Steps'Img);
+
    end Main_Thread;
 
    procedure Lab1(N: Positive) is
