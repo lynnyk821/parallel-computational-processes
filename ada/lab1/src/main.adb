@@ -2,12 +2,15 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Main is
 
+   Id_Of_Thread : Integer := 0;
+   Number_Of_Threads : Positive := 2;
    Step : Long_Long_Integer := 2;
 
    Flag : Boolean := False;
    Can_Stop : Boolean := False;
 
    pragma Atomic(Can_Stop);
+   pragma Atomic(Id_Of_Thread);
 
    task type Break_Thread;
    task type Main_Thread;
@@ -22,12 +25,15 @@ procedure Main is
 
    task body Main_Thread is
       Sum : Long_Long_Integer := 0;
+      Steps : Integer := 0;
    begin
       loop
+         Steps := Steps + 1;
          Sum := Sum + Step;
          exit when Can_Stop;
       end loop;
-      Put_Line(Sum'Img);
+      Id_Of_Thread := Id_Of_Thread + 1;
+      Put_Line("ID: " & Id_Of_Thread'Img & " Sum: " & Sum'Img & " Steps: " & Steps'Img);
    end Main_Thread;
 
    procedure Lab1(N: Positive) is
@@ -35,10 +41,12 @@ procedure Main is
       Break : Break_Thread;
    begin
       null;
-      end Lab;
+      end Lab1;
 begin
-   Put("Enter the step: ");
+   Put("Enter increment step: ");
    Step := Long_Long_Integer'Value(Get_Line);
-   Lab1(10);
+   Put("Enter number of threads: ");
+   Number_Of_Threads := Positive'Value(Get_Line);
+   Lab1(Number_Of_Threads);
    null;
 end Main;
