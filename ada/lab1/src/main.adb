@@ -10,7 +10,7 @@ procedure Main is
    Can_Stop : Boolean := False;
 
    pragma Atomic(Can_Stop);
-   pragma Atomic(Id_Of_Thread);
+   pragma Volatile(Id_Of_Thread);
 
 
    task type Break_Thread;

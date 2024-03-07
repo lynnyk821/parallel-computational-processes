@@ -21,7 +21,7 @@ public class ThreadsExecutor {
     }
     public void execute(){
         for(int i = 0; i < threads.length; i++){
-            (threads[i] = new Thread(() -> expectBreak())).start();
+            (threads[i] = new Thread(this::expectBreak)).start();
         }
     }
 }

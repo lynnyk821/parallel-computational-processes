@@ -1,7 +1,7 @@
 import java.time.Duration;
 
 public class ThreadBreaker {
-    private boolean canBreak;
+    private volatile boolean canBreak;
     public void breakAfter(int seconds){
         try {
             Thread.sleep(Duration.ofSeconds(seconds));
@@ -10,7 +10,7 @@ public class ThreadBreaker {
             throw new RuntimeException(e);
         }
     }
-    public synchronized boolean isCanBreak(){
+    public boolean isCanBreak(){
         return canBreak;
     }
 }
