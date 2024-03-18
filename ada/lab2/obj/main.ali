@@ -21,7 +21,7 @@ RV NO_IMPLICIT_LOOPS
 RV MAX_TASK_ENTRIES=2
 RV MAX_TASKS=1+
 
-U main%b		main.adb		5f4daf39 NE OO SU
+U main%b		main.adb		2dee0837 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
@@ -54,7 +54,7 @@ D interfac.ads		20210520051132 edec285f interfaces%s
 D i-c.ads		20210520051132 d9beded9 interfaces.c%s
 D i-cstrin.ads		20210520051132 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D main.adb		20240310102136 f1b97a54 main%b
+D main.adb		20240314090230 831add5a main%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-atacco.ads		20210520051132 4c36d12f system.address_to_access_conversions%s
 D s-conca2.ads		20210520051132 02a0d7d0 system.concat_2%s
@@ -95,42 +95,45 @@ X 1 ada.ads
 16K9*Ada 20e8 17|1r6 1r23
 X 11 a-textio.ads
 58K13*Text_IO 725e16 17|1w10 1r27
-463U14*Put 17|70s10
-506U14*Put_Line 17|72s7 81s7
+463U14*Put 17|28s10 81s10
+506U14*Put_Line 17|21s7 65s7 66s7 83s7 92s7
 X 17 main.adb
-3U11*Main 3b11 85l5 85t9
-4i4 Arr_Len{integer} 7r19 16r19 17r17 65r36 65r73
-5i4 Number_Of_Threads{integer} 59r25 60r29 64r19 65r46 65r83 68r19 75r19
-7a4 Arr(integer) 18m13 20m13 26r41 29r13 30r30
-9R9 Min_With_Index 12e14 25r69 26r13 38r37 42r13 51r38 58r21 60r51
-10i7 Value{integer} 26m32 29r26 30m21 42m32 70r28 76r27 76r47 81r50
-11i7 Index{integer} 26m59 30m38 42m44 81r89
-14U14 Init_Arr 14b14 23l8 23t16 62s7
-16i11 I{integer} 17r13 18r17 20r17 20r23
-25V13 Part_Min{9R9} 25b13 25>22 25>35 34l8 34t16 50s14
-25i22 Start_Index{integer} 26r45 26r68 28r16
-25i35 Finish_Index{integer} 28r35
-26r7 Min{9R9} 29r22 30m13 33r14
-28i11 I{integer} 29r17 30r34 30r47
-36T14 Starter_Thread 39l8 39e22 41b12 54l8 54t22 59r47
-37Y13 Start 37>19 37>32 45b14 48l11 48t16 65s20
-37i19 Start_Index{integer} 46r20
-37i32 Finish_Index{integer} 47r20
-38Y13 Get_Min 38<21 51b14 53l11 53t18 69s20
-38r21 Min_Value{9R9} 52m10 52r10
-42r7 Min{9R9} 50m7 52r23
-43i7 SIndex{integer} 46m10 50r23
-43i15 FIndex{integer} 47m10 50r31
-45i20 Start_index{integer}
-45i33 Finish_index{integer}
-51r22 Min_Value{9R9}
-57U14 Lab2 57b14 82l8 82t12 84s4
-58r7 Overall_Min{9R9} 74m7 76r35 77m13 81r38 81r77
-59a7 Thread(36T14) 65r10 69r10
-60a7 Min_Values(9R9) 69m28 69r28 70r14 74r22 76r13 77r28
-64i11 I{integer} 65r17 65r27 65r69
-68i11 I{integer} 69r17 69r39 70r25
-75i11 I{integer} 76r24 77r39
+3U11*Main 3b11 96l5 96t9
+4i4 Arr_Len{integer} 7r19 22r19 23r17 70r38 72r63
+5i4 Number_Of_Threads{integer} 61r25 62r29 68r19 70r48 72r40 79r19 86r19
+7a4 Arr(integer) 24m13 26m13 28r14 33r41 36r13 37r30
+9R9 Min_With_Index 12e14 16r37 32r69 33r13 44r13 53r38 60r21 62r51
+10i7 Value{integer} 33m32 36r26 37m21 44m32 81r28 87r27 87r47 92r50
+11i7 Index{integer} 33m59 37m38 44m44 92r89
+14T14 Starter_Thread 17l8 17e22 43b12 56l8 56t22 61r47
+15Y13 Start 15>19 15>32 47b14 50l11 50t16 74s23
+15i19 Start_Index{integer} 48r20
+15i32 Finish_Index{integer} 49r20
+16Y13 Get_Min 16<21 53b14 55l11 55t18 80s20
+16r21 Min_Value{9R9} 54m10 54r10
+19U14 Init_Arr 19b14 30l8 30t16 64s7
+22i11 I{integer} 23r13 24r17 26r17 26r23 28r18
+32V13 Part_Min{9R9} 32b13 32>22 32>35 41l8 41t16 52s14
+32i22 Start_Index{integer} 33r45 33r68 35r16
+32i35 Finish_Index{integer} 35r35
+33r7 Min{9R9} 36r22 37m13 40r14
+35i11 I{integer} 36r17 37r34 37r47
+44r7 Min{9R9} 52m7 54r23
+45i7 SIndex{integer} 48m10 52r23
+45i15 FIndex{integer} 49m10 52r31
+47i20 Start_index{integer}
+47i33 Finish_index{integer}
+53r22 Min_Value{9R9}
+59U14 Lab2 59b14 93l8 93t12 95s4
+60r7 Overall_Min{9R9} 85m7 87r35 88m13 92r38 92r77
+61a7 Thread(14T14) 74r13 80r10
+62a7 Min_Values(9R9) 80m28 80r28 81r14 85r22 87r13 88r28
+68i11 I{integer} 71r32 72r36 74r20
+70i13 Sub_Arr_Len{integer} 71r41 72r83
+71i13 Left{integer} 72r76 74r29
+72i13 Right{integer} 74r35
+79i11 I{integer} 80r17 80r39 81r25
+86i11 I{integer} 87r24 88r39
 X 35 s-stausa.ads
 208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
 273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22

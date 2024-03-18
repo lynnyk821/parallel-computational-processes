@@ -12,7 +12,7 @@ public class Main {
         int[] array = arrayGenerator.getArray();
         printIntArray(array);
 
-        ThreadsExecutor threadsExecutor = new ThreadsExecutor(array, 2);
+        ThreadsExecutor threadsExecutor = new ThreadsExecutor(array, 3);
         threadsExecutor.execute();
     }
 }

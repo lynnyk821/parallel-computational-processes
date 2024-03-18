@@ -14,11 +14,6 @@ class IntArrayGenerator {
             if(randomIndex == i) this.array[i] = -1;
         }
     }
-    public void randomFillArray(){
-        for(int i = 0; i < this.size; i++){
-            this.array[i] = new Random().nextInt(0, this.size);
-        }
-    }
     public int[] getArray() {
         return this.array;
     }

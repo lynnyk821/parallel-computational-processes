@@ -1,8 +1,8 @@
 import java.util.concurrent.CountDownLatch;
 
 class ThreadsExecutor {
-    private final int[] array;
     private final int split;
+    private final int[] array;
     public ThreadsExecutor(int[] array, int split) {
         this.array = array;
         this.split = Math.min(split, array.length);
@@ -31,9 +31,9 @@ class ThreadsExecutor {
         for (int i = 0; i < split; i++) {
             int copyOfI = i;
             int left = i * subArrLen,
-                right = (i == split - 1) ? aLen - 1 : (left + subArrLen - 1);
+                right = i == split - 1 ? aLen - 1 : left + subArrLen - 1;
 
-            new Thread(() -> {
+            new Thread(( ) -> {
                 Number minNumberInSubArr = getMinInBorders(this.array, left, right);
                 minNumbers[copyOfI] = minNumberInSubArr;
                 countDownLatch.countDown();
@@ -48,6 +48,15 @@ class ThreadsExecutor {
 
         return minNumbers;
     }
+    public Number getTotalMinNumber(Number[] numbers){
+        Number min = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if(min.getNumber() > numbers[i].getNumber()){
+                min = numbers[i];
+            }
+        }
+        return min;
+    }
     public void execute(){
         Number[] minNumbers = getMinNumbers();
         System.out.println("Print all min numbers: ");
@@ -56,12 +65,7 @@ class ThreadsExecutor {
             System.out.println("Number: " + num.getNumber() + " Index: " + num.getIndex()) ;
         System.out.println();
 
-        int[] minIntNumbers = new int[minNumbers.length];
-        for (int i = 0; i < minNumbers.length; i++) {
-            minIntNumbers[i] = minNumbers[i].getNumber();
-        }
-
-        Number min = getMinInBorders(minIntNumbers, 0, minNumbers.length - 1);
-        System.out.println("Min: " + min.getIndex() + " Index: " + min.getIndex());
+        Number min = getTotalMinNumber(minNumbers);
+        System.out.println("Min: " + min.getNumber() + " Index: " + min.getIndex());
     }
 }
