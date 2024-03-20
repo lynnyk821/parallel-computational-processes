@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\lynny\Desktop\parallel-computational-processes\ada\lab3\lab3.gpr
+20240318214118 82e22db8bbde75a3f9a059fda5d5db02
+[BOUND OBJECT FILES]
+C:\Users\lynny\Desktop\parallel-computational-processes\ada\lab3\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\lynny\Desktop\parallel-computational-processes\ada\lab3\obj\
+-LC:\Users\lynny\Desktop\parallel-computational-processes\ada\lab3\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnarl.a
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

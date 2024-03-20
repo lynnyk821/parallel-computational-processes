@@ -10,8 +10,8 @@ class Storage {
     private final Lock lock = new ReentrantLock();
     private final Queue<String> storage = new LinkedList<>();
     public Storage(int storageSize) {
-        full = new Semaphore(storageSize); // типу щоб продюсери не вилазили за макс кількість
-        empty = new Semaphore(0); // типу wait для consume, якщо consumer захоче взяти з пустої черги item, то буде заблочений
+        full = new Semaphore(storageSize);
+        empty = new Semaphore(0); 
     }
     public void consume(){
         try {

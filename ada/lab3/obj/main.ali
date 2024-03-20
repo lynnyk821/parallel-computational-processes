@@ -107,7 +107,7 @@ D interfac.ads		20210520051132 edec285f interfaces%s
 D i-c.ads		20210520051132 d9beded9 interfaces.c%s
 D i-cstrin.ads		20210520051132 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D main.adb		20240319115238 45113695 main%b
+D main.adb		20240320134956 45113695 main%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-addima.ads		20210520051132 a1ec9d3a system.address_image%s
 D s-atacco.ads		20210520051132 4c36d12f system.address_to_access_conversions%s
@@ -179,25 +179,25 @@ X 23 g-semaph.ads
 58Y13 Seize 28|27s26 28s28 43s27 44s28
 63U17 Release 28|33s28 34s27 54s28 55s26
 X 28 main.adb
-7U11*Main 7b11 70l5 70t9
+7U11*Main 7b11 68l5 68t9
 8K12 String_Lists[7|47] 9r8
-11U14 Starter 11b14 11>23 11>37 11>61 66l8 66t15 69s4
+11U14 Starter 11b14 11>23 11>37 11>61 65l8 65t15 67s4
 11i23 Storage_Size{integer} 15r44
 11i37 Item_Numbers{integer} 26r24 42r24
-11i61 P_C_N{positive} 62r39 63r39
+11i61 P_C_N{positive} 61r39 62r39
 12r7 Storage{7|54R9[8]} 30m13 30r13 47r48 52m13 52r13
 14w7 Access_Storage{23|47W19} 28r13 33r13 44r13 54r13
 15w7 Full_Storage{23|47W19} 27r13 55r13
 16w7 Empty_Storage{23|47W19} 34r13 43r13
 18T17 Producer 21r59 24b17 38l11 38t19
 19T17 Consumer 22r59 40b17 60l11 60t19
-21A12 Producer_Array(18T17)<integer> 62r19
-22A12 Consumer_Array(19T17)<integer> 63r19
+21A12 Producer_Array(18T17)<integer> 61r19
+22A12 Consumer_Array(19T17)<integer> 62r19
 26i14 i{integer} 30r39 31r39
 42i14 i{integer}
 47a16 item{string} 49r36
-62a7 Producers{21A12}
-63a7 Consumers{22A12}
+61a7 Producers{21A12}
+62a7 Consumers{22A12}
 X 29 system.ads
 67M9*Address
 100I12*Any_Priority{integer}

@@ -1,17 +1,17 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-C:\Users\lynny\Desktop\parallel-computational-processes\ada\lab3.gpr
-20240318214118 f697c4d2c9403527831784d546d86a22
+C:\Users\lynny\Desktop\parallel-computational-processes\ada\lab4\lab4.gpr
+20240320135050 7a2befc657091eec21ba3a1d8b83041e
 [BOUND OBJECT FILES]
-C:\Users\lynny\Desktop\parallel-computational-processes\ada\obj\main.o
+C:\Users\lynny\Desktop\parallel-computational-processes\ada\lab4\obj\main.o
 [GENERATED SOURCE FILES]
 b__main.ads
 b__main.adb
 b__main.ali
 [RESULTING OPTIONS]
--LC:\Users\lynny\Desktop\parallel-computational-processes\ada\obj\
--LC:\Users\lynny\Desktop\parallel-computational-processes\ada\obj\
+-LC:\Users\lynny\Desktop\parallel-computational-processes\ada\lab4\obj\
+-LC:\Users\lynny\Desktop\parallel-computational-processes\ada\lab4\obj\
 -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
 -static
 -static-libgcc
