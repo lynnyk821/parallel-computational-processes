@@ -16,20 +16,12 @@ public class Philosopher {
     }
     public void philosopherTask(){
         doAction("Thinking");
+        
+        left.pickUpFork();
+        doAction("Picked up left fork");
 
-        if(id % 2 == 0){
-            left.pickUpFork();
-            doAction("Picked up left fork");
-
-            right.pickUpFork();
-            doAction("Picked up right fork - eating");
-        } else {
-            right.pickUpFork();
-            doAction("Picked up right fork");
-
-            left.pickUpFork();
-            doAction("Picked up left fork - eating");
-        }
+        right.pickUpFork();
+        doAction("Picked up right fork - eating");
 
         left.putDownFork();
         doAction("Put down right fork");
