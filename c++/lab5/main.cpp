@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <random>
 #include "omp.h"
 
 using namespace std;
@@ -7,13 +8,14 @@ using namespace std;
 vector<vector<int>> getFilledMatrix(int rows, int cols){
     vector<vector<int>> matrix(rows, vector<int>(cols, 0));
 
-    int count = 1;
+    random_device rd;
+    mt19937 mersenne(rd());
+    uniform_int_distribution<int> distribution(-10000, 10000);
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            matrix[i][j] = count++;
+            matrix[i][j] = distribution(mersenne);
         }
     }
-    matrix[rows / 2][cols / 2] = -100;
 
     return matrix;
 }
@@ -79,8 +81,8 @@ void printMatrix(const vector<vector<int>>& matrix) {
 }
 
 int main() {
-    vector<vector<int>> matrix = getFilledMatrix(5, 5);
-    printMatrix(matrix);
+    vector<vector<int>> matrix = getFilledMatrix(10000, 10000);
+    // printMatrix(matrix);
 
     omp_set_nested(1);
 
