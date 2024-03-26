@@ -21,7 +21,7 @@ procedure Main is
       Id_Left_Fork := Id;
       Id_Right_Fork := Id rem Number_Of_Philosopher + 1;
 
-      for I in 1..1 loop
+      for I in 1..4 loop
          Put_Line("Philosopher " & Id'Img & " thinking");
 
          if Id = Number_Of_Philosopher then
