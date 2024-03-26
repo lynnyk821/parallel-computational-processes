@@ -16,7 +16,7 @@ public class Philosopher {
     }
     public void philosopherTask(){
         doAction("Thinking");
-
+        
         left.pickUpFork();
         doAction("Picked up left fork");
 
