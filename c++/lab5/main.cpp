@@ -26,7 +26,7 @@ long long calcSumOfMatrix(const vector<vector<int>>& matrix, int num_threads) {
     double t1 = omp_get_wtime();
 #pragma omp parallel for reduction(+:sum) num_threads(num_threads)
     for(size_t i = 0; i < matrix.size(); ++i) {
-        for (size_t j = 0; j < matrix[i].size(); ++j) {
+        for(size_t j = 0; j < matrix[i].size(); ++j) {
             sum += matrix[i][j];
         }
     }
@@ -46,17 +46,16 @@ long calcSumOfRow(const vector<vector<int>>& matrix, int row) {
 }
 
 int getIndexOfRowWithMinSum(const vector<vector<int>>& matrix, int num_threads) {
-    int index;
+    int index = 0;
     long sum = calcSumOfRow(matrix, 0);
 
     double t1 = omp_get_wtime();
 #pragma omp parallel for num_threads(num_threads)
     for(int i = 1; i < matrix.size(); i++){
         long tmpSum = calcSumOfRow(matrix, i);
-
+        if(sum > tmpSum) {
 #pragma omp critical
         {
-            if(sum > tmpSum){
                 if(sum > tmpSum){
                     sum = tmpSum;
                     index = i;
@@ -82,9 +81,8 @@ void printMatrix(const vector<vector<int>>& matrix) {
 
 int main() {
     vector<vector<int>> matrix = getFilledMatrix(10000, 10000);
-    // printMatrix(matrix);
 
-    omp_set_nested(1);
+    //omp_set_nested(1);
 
     int index = 0;
     long long sum = 0;
@@ -93,14 +91,15 @@ int main() {
     {
         #pragma omp section
         {
-            sum = calcSumOfMatrix(matrix, 100);
+            sum = calcSumOfMatrix(matrix, 2);
         }
 
         #pragma omp section
         {
-            index = getIndexOfRowWithMinSum(matrix, 100);
+            index = getIndexOfRowWithMinSum(matrix, 2);
         }
     }
+
     cout << "Sum : "  + to_string(sum) << endl;
     cout << "Index : " + to_string(index) + " sum = " + to_string(calcSumOfRow(matrix, index)) << endl;
 
